@@ -42,3 +42,10 @@ npx create-next-app@latest my-app
 cd my-app
 npm install
 npm run dev
+
+npx shadcn@latest init
+
+npx shadcn@latest add textarea
+npx shadcn@latest add input
+npx shadcn@latest add menubar
+npx shadcn@latest add avatar
