@@ -49,3 +49,11 @@ npx shadcn@latest add textarea
 npx shadcn@latest add input
 npx shadcn@latest add menubar
 npx shadcn@latest add avatar
+npx shadcn@latest add card
+npx shadcn@latest add field
+npx shadcn@latest add select
+
+
+
+how to creata a context in nextJs
+https://dev.to/saiful7778/using-react-context-api-in-nextjs-15-for-global-state-management-379h

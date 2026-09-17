@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Nike Air Force",
+        "type": "FOOTWEAR",
+        "price": 120,
+        "image": "https://images.unsplash.com/vector-1739887191858-d69b2e16c51b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Nice and good"
+    },
+    {
+        "id": 2,
+        "name": "New Balance T-Shirt",
+        "type": "TSHIRT",
+        "price": 20,
+        "image": "https://images.unsplash.com/vector-1739887191858-d69b2e16c51b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Oversized"
+    },
+    {
+        "id": 3,
+        "name": "F.C. Barcelona Third",
+        "type": "TROUSERS",
+        "price": 39,
+        "image": "https://images.unsplash.com/vector-1739887191858-d69b2e16c51b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Slim"
+    },
+    {
+        "id": 4,
+        "name": "Addidas T-Shirt",
+        "type": "TSHIRT",
+        "price": 7,
+        "image": "https://images.unsplash.com/vector-1739887191858-d69b2e16c51b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Oversized"
+    },
+    {
+        "id": 5,
+        "name": "Nike Air Force Deluxe",
+        "type": "FOOTWEAR",
+        "price": 170,
+        "image": "https://images.unsplash.com/vector-1739887191858-d69b2e16c51b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Nice and good"
+    },
+    {
+        "id": 6,
+        "name": "Crew Socks",
+        "type": "SOCKS",
+        "price": 12,
+        "image": "https://images.unsplash.com/vector-1739887191858-d69b2e16c51b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Good quality"
+    },
+    {
+        "id": 7,
+        "name": "Nike Studio Fleece Heavyweight",
+        "type": "HOODIES",
+        "price": 59,
+        "image": "https://images.unsplash.com/vector-1739887191858-d69b2e16c51b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Fits large"
+    },
+    {
+        "id": 8,
+        "name": "Kids Socks",
+        "type": "SOCKS",
+        "price": 6,
+        "image": "https://images.unsplash.com/vector-1739887191858-d69b2e16c51b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Good quality"
+    }
+]
