@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ProductContextProvider } from "@/context/ProductContext";
+import { Toaster } from "@/components/ui/toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <Toaster />
         </ProductContextProvider>
       </body>
     </html>

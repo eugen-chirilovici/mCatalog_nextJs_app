@@ -52,6 +52,8 @@ npx shadcn@latest add avatar
 npx shadcn@latest add card
 npx shadcn@latest add field
 npx shadcn@latest add select
+npx shadcn@latest add toast
+npx shadcn@latest add scroll-area
 
 
 

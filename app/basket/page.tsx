@@ -2,26 +2,22 @@
 
 import { useProductItems } from "@/context/ProductContext";
 import BasketItems from "@/components/basket/BasketItems";
-import { FieldGroup, FieldLegend } from "@/components/ui/field";
+import BasketEmpty from "@/components/basket/BasketEmpty";
+import CheckoutBasket from "@/components/checkout/CheckoutBasket";
 
 export default function Basket() {
-
     const { productsDTO } = useProductItems();
 
     if (productsDTO.length === 0) {
         return (
-            <h2>The Basket is empty</h2>
+            <BasketEmpty/>
         )
     }
 
     return (
-        <div className="flex flex-row mt-10 mx-50">
+        <div className="flex flex-row justify-around mt-10">
             <BasketItems productsDTO={productsDTO} />
-            <div>
-                <FieldGroup>
-                    <FieldLegend>Price: $N</FieldLegend>
-                </FieldGroup>
-            </div>
+            <CheckoutBasket/>
         </div>
     );
 }
