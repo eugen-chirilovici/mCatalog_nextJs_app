@@ -14,7 +14,7 @@ export default function ProductCardSheet({ product }: { product: Product }) {
     return (
         <div className="flex flex-row justify-center mt-10">
             <Card className="w-100">
-                <Image src={product.image} alt={product.name} width={500} height={500} />
+                <Image loading="eager" src={product.image} alt={product.name} width={500} height={500} />
                 <CardHeader>
                     <CardTitle>{product.name}</CardTitle>
                 </CardHeader>

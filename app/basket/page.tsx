@@ -10,14 +10,30 @@ export default function Basket() {
 
     if (productsDTO.length === 0) {
         return (
-            <BasketEmpty/>
+            <BasketEmpty />
         )
+    }
+
+    if (productsDTO.some((product) => product.quantity === 5)) {
+        /*
+        todo: not working as expected, try to solve.
+       
+        Reason:        
+        React Error Boundaries ( error.tsx or global-error.tsx) only catch errors 
+        thrown during rendering, lifecycle methods, and constructors. 
+        
+        They do not catch errors thrown inside:
+        *   Asynchronous event handlers (eg, onClick={() => throw new Error()})
+        *   Asynchronous callbacks (eg, setTimeout, fetch().then())
+        *   Server Actions / API routes directly on the client side
+        */
+        throw new Error('Generated error!');
     }
 
     return (
         <div className="flex flex-row justify-around mt-10">
             <BasketItems productsDTO={productsDTO} />
-            <CheckoutBasket/>
+            <CheckoutBasket />
         </div>
     );
 }

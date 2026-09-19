@@ -59,3 +59,6 @@ npx shadcn@latest add scroll-area
 
 how to creata a context in nextJs
 https://dev.to/saiful7778/using-react-context-api-in-nextjs-15-for-global-state-management-379h
+
+cookies
+https://www.geeksforgeeks.org/reactjs/cookies-in-next-js/

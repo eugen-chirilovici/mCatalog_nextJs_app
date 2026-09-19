@@ -6,7 +6,7 @@ import BasketHome from "../basket/BasketHome";
 
 export default function Header() {
     return (
-        <div className=" bg-amber-100">
+        <div className="bg-amber-100 rounded-3xl">
             <div className='flex flex-row justify-between my-2 mx-6'>
                 <Link href="/">
                     <Store name="Market Icon" className="h-12 w-12 cursor-pointer" />
