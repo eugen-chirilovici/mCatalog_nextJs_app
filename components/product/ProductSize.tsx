@@ -18,7 +18,7 @@ export default function ProductSize({ productType }: { productType: String }) {
         <FieldGroup>
             <FieldSet>
                 <Field className="w-4xs flex flex-row">
-                    <FieldLabel>
+                    <FieldLabel className="text-base">
                         Select the size:
                     </FieldLabel>
                     <Select value={selectedSize} onValueChange={handleSizeChange}>
@@ -28,7 +28,7 @@ export default function ProductSize({ productType }: { productType: String }) {
                         <SelectContent>
                             <SelectGroup>
                                 {adjustSizeBasedOnProductType(productType).map((item) => (
-                                    <SelectItem key={item.value} value={item.value}>
+                                    <SelectItem key={item.value} value={item.value} >
                                         {item.label}
                                     </SelectItem>
                                 ))}

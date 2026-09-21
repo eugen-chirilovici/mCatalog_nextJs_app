@@ -45,6 +45,8 @@ npm run dev
 
 npx shadcn@latest init
 
+
+https://ui.shadcn.com/docs/components
 npx shadcn@latest add textarea
 npx shadcn@latest add input
 npx shadcn@latest add menubar

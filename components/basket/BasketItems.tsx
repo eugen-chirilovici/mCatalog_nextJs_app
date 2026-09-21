@@ -15,7 +15,7 @@ export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[]
             <div className="flex flex-col justify-center items-center p-5 gap-2">
                 {productsDTO.map((product) => (
                     <div key={product.uuid} className="flex flex-row w-xl pl-2 border-2 rounded-2xl " >
-                        <Image loading="eager" src={product.image} alt={product.name} width={250} height={250} />
+                        <Image loading="eager" src={product.image} alt={product.name} width={250} height={250} className="p-3" />
                         <FieldGroup className="mx-2 my-2 pl-5" >
                             <Field>
                                 {product.name}

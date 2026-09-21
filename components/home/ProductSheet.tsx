@@ -9,7 +9,7 @@ export default function ProductSheet({ product }: { product: Product }) {
         <Link href={`/product/${product.id}`}>
             <Card className="w-2xs m-6">
                 <CardHeader>{product.name}</CardHeader>
-                <Image loading="eager" src={product.image} alt={product.name} width={400} height={400} />
+                <Image loading="eager" src={product.image} alt={product.name} width={400} height={400} className="p-3"/>
                 <Label className="pl-4">Price: ${product.price}</Label>
                 <CardDescription className="pl-4 text-black">{product.description}</CardDescription>
             </Card>
