@@ -15,10 +15,8 @@ export default function ProductSheet({ product }: { product: Product }) {
               alt={product.name}
               width={400}
               height={400}
-              className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
-            />
+              className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-105" />
           </div>
-
           <div className="p-5 flex flex-col gap-1.5">
             <h3 className="font-semibold text-base text-slate-900 group-hover:text-slate-600 transition-colors line-clamp-1">
               {product.name}
@@ -28,7 +26,6 @@ export default function ProductSheet({ product }: { product: Product }) {
             </p>
           </div>
         </div>
-
         <div className="px-5 pb-5 pt-1 flex items-center justify-between border-t border-slate-100 mt-auto">
           <span className="text-lg font-bold text-slate-900">
             ${product.price}

@@ -15,11 +15,9 @@ export default function Footer() {
                                     alt="Eugeniu Chirilovici"
                                     width={300}
                                     height={300}
-                                    className="rounded-xl object-cover h-full w-full"
-                                />
+                                    className="rounded-xl object-cover h-full w-full"/>
                             </div>
                         </div>
-
                         <div className="flex flex-col gap-3.5 text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
                             {message.map((m, index) => (
                                 <p key={index} className={index === 0 ? "text-lg sm:text-xl font-bold text-slate-900" : ""}>
@@ -29,7 +27,6 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-
                 <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
                     <p>© {new Date().getFullYear()} Sport Club Store • Built by Eugeniu Chirilovici</p>
                     <div className="flex gap-6">

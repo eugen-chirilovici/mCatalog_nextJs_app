@@ -8,7 +8,6 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-
                 <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
                     <div className="h-10 w-10 rounded-xl bg-slate-900 flex items-center justify-center text-white transition-transform group-hover:scale-105 shadow-sm">
                         <Store className="h-5 w-5" />
@@ -17,7 +16,6 @@ export default function Header() {
                         Sport Club
                     </span>
                 </Link>
-
                 <div className="relative flex-1 max-w-md mx-2 sm:mx-6">
                     <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
                     <Input
@@ -25,12 +23,10 @@ export default function Header() {
                         className="w-full h-11 pl-10 pr-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-slate-400 focus:ring-2 focus:ring-slate-900/10 transition-all"
                     />
                 </div>
-
                 <div className="flex items-center gap-3 shrink-0">
                     <Link href="/basket" className="flex items-center">
                         <BasketHome />
                     </Link>
-
                     <Menubar className="bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl px-2 h-10 transition-colors">
                         <MenubarMenu>
                             <MenubarTrigger className="cursor-pointer text-sm font-medium text-slate-700 hover:text-slate-900 px-2 py-1 focus:bg-transparent">

@@ -15,8 +15,7 @@ export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[]
                 {productsDTO.map((product) => (
                     <div
                         key={product.uuid}
-                        className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-4 rounded-2xl border border-slate-200/80 bg-slate-50/50 hover:bg-slate-50 transition-colors"
-                    >
+                        className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-4 rounded-2xl border border-slate-200/80 bg-slate-50/50 hover:bg-slate-50 transition-colors">
                         <div className="relative shrink-0 w-28 h-28 sm:w-32 sm:h-32 bg-slate-100 rounded-xl p-2 flex items-center justify-center overflow-hidden">
                             <Image
                                 loading="eager"
@@ -24,10 +23,8 @@ export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[]
                                 alt={product.name}
                                 width={128}
                                 height={128}
-                                className="object-contain h-full w-full"
-                            />
+                                className="object-contain h-full w-full" />
                         </div>
-
                         <div className="flex flex-col justify-between flex-grow w-full gap-3">
                             <div className="flex flex-col sm:flex-row justify-between items-start gap-1">
                                 <div>
@@ -39,7 +36,6 @@ export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[]
                                     </p>
                                 </div>
                             </div>
-
                             <div className="flex items-center gap-2 text-xs font-medium text-slate-600">
                                 <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-md shadow-2xs">
                                     Qty: <strong className="text-slate-900 font-semibold">{product.quantity}</strong>
@@ -48,14 +44,12 @@ export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[]
                                     Size: <strong className="text-slate-900 font-semibold">{product.size}</strong>
                                 </span>
                             </div>
-
                             <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between">
                                 <Button
                                     variant="ghost"
                                     size="sm"
                                     className="text-xs font-medium text-rose-600 hover:text-rose-700 hover:bg-rose-50/80 p-0 h-auto hover:bg-transparent transition-colors"
-                                    onClick={() => removeFromBasket(product.uuid)}
-                                >
+                                    onClick={() => removeFromBasket(product.uuid)}>
                                     Remove item
                                 </Button>
                                 <span className="text-xs font-semibold text-slate-900">

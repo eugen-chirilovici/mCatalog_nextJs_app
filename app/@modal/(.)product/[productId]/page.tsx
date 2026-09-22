@@ -25,27 +25,24 @@ export default function Product({
 
     if (!productById) {
         return (
-            <div
-                onClick={() => router.back()}
-                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200"
-            >
+            <div className="fixed inset-0 z-[40] flex items-center justify-center p-4">
+                <div
+                    onClick={() => router.back()}
+                    className="absolute inset-0 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200" />
                 <div
                     onClick={(e) => e.stopPropagation()}
-                    className="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-200/80 text-center relative"
-                >
+                    className="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-200/80 text-center relative z-[41] animate-in zoom-in-95 duration-200">
                     <button
                         onClick={() => router.back()}
                         className="absolute top-4 right-4 h-8 w-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors"
-                        aria-label="Close modal"
-                    >
+                        aria-label="Close modal">
                         ✕
                     </button>
                     <h2 className="text-xl font-bold text-slate-900 mb-2">Product Not Found</h2>
                     <p className="text-sm text-slate-500 mb-6">The item you are looking for does not exist or has been removed.</p>
                     <button
                         onClick={() => router.back()}
-                        className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl transition-all shadow-sm active:scale-[0.98]"
-                    >
+                        className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl transition-all shadow-sm active:scale-[0.98]">
                         Go Back
                     </button>
                 </div>
@@ -54,22 +51,19 @@ export default function Product({
     }
 
     return (
-        <div
-            onClick={() => router.back()}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto"
-        >
+        <div className="fixed inset-0 z-[40] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+            <div
+                onClick={() => router.back()}
+                className="fixed inset-0 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200" />
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200/80 animate-in zoom-in-95 duration-200 my-auto"
-            >
+                className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative z-[41] border border-slate-200/80 animate-in zoom-in-95 duration-200 my-auto">
                 <button
                     onClick={() => router.back()}
                     className="absolute top-4 right-4 z-10 h-9 w-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 text-sm font-semibold transition-all active:scale-95 shadow-sm"
-                    aria-label="Close modal"
-                >
+                    aria-label="Close modal">
                     ✕
                 </button>
-
                 <ProductCardSheet product={productById} />
             </div>
         </div>

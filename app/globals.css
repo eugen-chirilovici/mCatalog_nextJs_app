@@ -58,3 +58,15 @@
     transform: scale(0.98);
   }
 }
+
+[data-radix-toast-viewport] {
+  z-index: 99999 !important;
+}
+
+[data-radix-toast-root],
+[role="status"] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  opacity: 1 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}

@@ -14,17 +14,14 @@ export default function BasketEmpty() {
                         alt="Empty Basket"
                         width={200}
                         height={200}
-                        className="object-contain h-full w-full opacity-90"
-                    />
+                        className="object-contain h-full w-full opacity-90" />
                 </div>
-
                 <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 mb-2">
                     Your cart is empty
                 </h2>
                 <p className="text-sm text-slate-500 mb-8 max-w-xs leading-relaxed">
                     Looks like you haven't added anything to your cart yet. Discover our latest collection and start shopping!
                 </p>
-
                 <Link href="/" className="w-full">
                     <Button className="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl transition-all shadow-sm active:scale-[0.98]">
                         Explore Products
