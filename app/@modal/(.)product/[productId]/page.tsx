@@ -1,7 +1,7 @@
 "use client";
 
 import ProductCardSheet from "@/components/product/ProductCardSheet";
-import products from "@/data/products.json";
+import { ProductQueries } from "@/lib/api/ProductQueries";
 import { useRouter } from "next/navigation";
 import { use, useEffect } from "react";
 
@@ -12,8 +12,7 @@ export default function Product({
 }) {
     const router = useRouter();
     const resolvedParams = use(params);
-
-    const productById = products.find((product) => product.id.toString() === resolvedParams.productId);
+    const { data, isFetching, isLoading } = ProductQueries.useProduct(resolvedParams.productId)
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -23,8 +22,20 @@ export default function Product({
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [router]);
 
-    if (!productById) {
-        return (
+
+    {
+        isFetching && !isLoading && (
+            <p className="text-xs text-blue-600 font-semibold animate-pulse">
+                Updating results...
+            </p>
+        )
+    }
+
+    { isLoading && <div className="p-8 text-center text-gray-500" > Loading products...</div> }
+
+
+    {
+        !data &&
             <div className="fixed inset-0 z-[40] flex items-center justify-center p-4">
                 <div
                     onClick={() => router.back()}
@@ -47,25 +58,28 @@ export default function Product({
                     </button>
                 </div>
             </div>
-        );
     }
 
     return (
-        <div className="fixed inset-0 z-[40] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-            <div
-                onClick={() => router.back()}
-                className="fixed inset-0 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200" />
-            <div
-                onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative z-[41] border border-slate-200/80 animate-in zoom-in-95 duration-200 my-auto">
-                <button
-                    onClick={() => router.back()}
-                    className="absolute top-4 right-4 z-10 h-9 w-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 text-sm font-semibold transition-all active:scale-95 shadow-sm"
-                    aria-label="Close modal">
-                    ✕
-                </button>
-                <ProductCardSheet product={productById} />
-            </div>
-        </div>
+        <>
+            {data &&
+                <div className="fixed inset-0 z-[40] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+                    <div
+                        onClick={() => router.back()}
+                        className="fixed inset-0 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200" />
+                    <div
+                        onClick={(e) => e.stopPropagation()}
+                        className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative z-[41] border border-slate-200/80 animate-in zoom-in-95 duration-200 my-auto">
+                        <button
+                            onClick={() => router.back()}
+                            className="absolute top-4 right-4 z-10 h-9 w-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 text-sm font-semibold transition-all active:scale-95 shadow-sm"
+                            aria-label="Close modal">
+                            ✕
+                        </button>
+                        <ProductCardSheet product={data} />
+                    </div>
+                </div>
+            }
+        </>
     );
 }

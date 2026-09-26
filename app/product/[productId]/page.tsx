@@ -1,20 +1,29 @@
 import ProductCardSheet from "@/components/product/ProductCardSheet";
-import products from "@/data/products.json";
+import { ProductQueries } from "@/lib/api/ProductQueries";
 import Link from "next/link";
+import { use } from "react";
 
-export default async function Product({
+export default function Product({
     params,
 }: {
     params: Promise<{ productId: string }>;
 }) {
-    const { productId } = await params;
 
-    const productById = products.find(
-        (product) => product.id.toString() === productId
-    );
+    const resolvedParams = use(params);
+    const { data, isFetching, isLoading } = ProductQueries.useProduct(resolvedParams.productId)
 
-    if (!productById) {
-        return (
+    {
+        isFetching && !isLoading && (
+            <p className="text-xs text-blue-600 font-semibold animate-pulse">
+                Updating results...
+            </p>
+        )
+    }
+
+    { isLoading && <div className="p-8 text-center text-gray-500" > Loading products...</div> }
+
+    {
+        !data && (
             <div className="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8 text-center flex-grow flex flex-col items-center justify-center">
                 <div className="bg-white rounded-3xl p-10 border border-slate-200/80 shadow-sm max-w-md w-full">
                     <h1 className="text-2xl font-bold text-slate-900 mb-2">
@@ -30,14 +39,19 @@ export default async function Product({
                     </Link>
                 </div>
             </div>
-        );
+        )
     }
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full flex-grow">
-            <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 sm:p-10">
-                <ProductCardSheet product={productById} />
-            </div>
-        </section>
+        <>
+            {data &&
+                < section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full flex-grow" >
+                    <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 sm:p-10">
+                        <ProductCardSheet product={data} />
+                    </div >
+                </section >
+            }
+        </>
     );
+
 }

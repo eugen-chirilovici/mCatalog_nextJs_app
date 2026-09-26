@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ProductContextProvider } from "@/context/ProductContext";
 import { Toaster } from "@/components/ui/toast";
+import ApiProvider from "@/components/api/ApiProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,11 @@ export default function RootLayout({ children, modal }: LayoutProps<"/">) {
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
         <ProductContextProvider>
           <Header />
-          <main className="flex-grow flex flex-col">{children}</main>
+          <ApiProvider>
+            <main className="flex-grow flex flex-col">{children}</main>
+            {modal}
+          </ApiProvider>
           <Footer />
-          {modal}
           <Toaster />
         </ProductContextProvider>
       </body>

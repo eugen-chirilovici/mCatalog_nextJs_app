@@ -64,3 +64,5 @@ https://dev.to/saiful7778/using-react-context-api-in-nextjs-15-for-global-state-
 
 cookies
 https://www.geeksforgeeks.org/reactjs/cookies-in-next-js/
+
+npm i @tanstack/react-query

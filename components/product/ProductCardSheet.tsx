@@ -17,8 +17,8 @@ export default function ProductCardSheet({ product }: { product: Product }) {
                 <div className="relative aspect-square w-full bg-slate-100/80 rounded-2xl p-6 sm:p-8 flex items-center justify-center overflow-hidden border border-slate-200/60">
                     <Image
                         loading="eager"
-                        src={product.image}
-                        alt={product.name}
+                        src={product.thumbnail}
+                        alt={product.title}
                         width={500}
                         height={500}
                         className="object-contain h-full w-full transition-transform duration-300 hover:scale-105" />
@@ -27,15 +27,16 @@ export default function ProductCardSheet({ product }: { product: Product }) {
                     <div className="space-y-4">
                         <div>
                             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-                                {product.name}
+                                {product.title}
                             </h2>
                             <p className="text-2xl font-bold text-slate-900 mt-2">
                                 ${product.price}
                             </p>
                         </div>
-                        <div className="pt-2">
+                        {/* todo
+                         <div className="pt-2">
                             <ProductSize productType={product.type} />
-                        </div>
+                        </div> */}
                         <div className="pt-2 border-t border-slate-100">
                             <FieldLabel className="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-1">
                                 Description

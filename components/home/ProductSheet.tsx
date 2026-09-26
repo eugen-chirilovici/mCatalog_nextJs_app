@@ -11,15 +11,15 @@ export default function ProductSheet({ product }: { product: Product }) {
           <div className="relative aspect-square w-full overflow-hidden bg-slate-100 p-6 flex items-center justify-center">
             <Image
               loading="eager"
-              src={product.image}
-              alt={product.name}
+              src={product.thumbnail}
+              alt={product.title}
               width={400}
               height={400}
               className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-105" />
           </div>
           <div className="p-5 flex flex-col gap-1.5">
             <h3 className="font-semibold text-base text-slate-900 group-hover:text-slate-600 transition-colors line-clamp-1">
-              {product.name}
+              {product.title}
             </h3>
             <p className="text-sm text-slate-500 line-clamp-2 leading-relaxed">
               {product.description}
@@ -29,6 +29,9 @@ export default function ProductSheet({ product }: { product: Product }) {
         <div className="px-5 pb-5 pt-1 flex items-center justify-between border-t border-slate-100 mt-auto">
           <span className="text-lg font-bold text-slate-900">
             ${product.price}
+          </span>
+          <span className="text-lg font-bold text-slate-900">
+            ★ {product.rating}
           </span>
           <span className="text-xs font-medium text-slate-500 group-hover:text-slate-900 transition-colors">
             View Details &rarr;
