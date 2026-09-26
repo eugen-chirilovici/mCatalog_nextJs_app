@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { Field, FieldGroup, FieldLabel, FieldSet } from "../ui/field";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
-import { useProductItems } from "@/context/ProductContext";
+import { useProductContext } from "@/context/ProductContext";
 
 export default function ProductSize({ productType }: { productType: string }) {
-    const { updateSelectedSize } = useProductItems();
+    const { updateSelectedSize } = useProductContext();
     const [selectedSize, setSelectedSize] = useState<string>("");
 
     const handleSizeChange = (size: string | null) => {

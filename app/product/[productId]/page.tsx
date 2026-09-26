@@ -1,3 +1,5 @@
+"use client"
+
 import ProductCardSheet from "@/components/product/ProductCardSheet";
 import { ProductQueries } from "@/lib/api/ProductQueries";
 import Link from "next/link";

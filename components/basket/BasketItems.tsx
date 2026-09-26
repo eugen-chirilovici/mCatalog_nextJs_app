@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { ProductDTO } from "@/model/ProductDTO";
 import { Button } from "../ui/button";
-import { useProductItems } from "@/context/ProductContext";
+import { useProductContext } from "@/context/ProductContext";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[] }) {
-    const { removeFromBasket } = useProductItems();
+    const { removeFromBasket } = useProductContext();
 
     return (
         <ScrollArea className={`${adjustScrollHigh(productsDTO)} w-full rounded-3xl border border-slate-200/80 bg-white p-4 sm:p-6 shadow-sm`}>
@@ -19,8 +19,8 @@ export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[]
                         <div className="relative shrink-0 w-28 h-28 sm:w-32 sm:h-32 bg-slate-100 rounded-xl p-2 flex items-center justify-center overflow-hidden">
                             <Image
                                 loading="eager"
-                                src={product.image}
-                                alt={product.name}
+                                src={product.thumbnail}
+                                alt={product.title}
                                 width={128}
                                 height={128}
                                 className="object-contain h-full w-full" />
@@ -29,7 +29,7 @@ export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[]
                             <div className="flex flex-col sm:flex-row justify-between items-start gap-1">
                                 <div>
                                     <h3 className="font-semibold text-slate-900 text-base sm:text-lg line-clamp-1">
-                                        {product.name}
+                                        {product.title}
                                     </h3>
                                     <p className="text-sm font-bold text-slate-900 mt-0.5">
                                         ${product.price}
@@ -40,9 +40,11 @@ export default function BasketItems({ productsDTO }: { productsDTO: ProductDTO[]
                                 <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-md shadow-2xs">
                                     Qty: <strong className="text-slate-900 font-semibold">{product.quantity}</strong>
                                 </span>
-                                <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-md shadow-2xs">
-                                    Size: <strong className="text-slate-900 font-semibold">{product.size}</strong>
-                                </span>
+                                {
+                                    product.size && <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-md shadow-2xs">
+                                        Size: <strong className="text-slate-900 font-semibold">{product.size}</strong>
+                                    </span>
+                                }
                             </div>
                             <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between">
                                 <Button

@@ -1,10 +1,16 @@
+"use client";
+
 import { Store, Search } from "lucide-react";
 import { Input } from "../ui/input";
 import { Menubar, MenubarContent, MenubarGroup, MenubarItem, MenubarMenu, MenubarTrigger } from "../ui/menubar";
 import Link from "next/link";
 import BasketHome from "../basket/BasketHome";
+import { useSearchContext } from "@/context/SearchContext";
 
 export default function Header() {
+
+    const { search, setSearchWrapper } = useSearchContext();
+
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
@@ -16,13 +22,18 @@ export default function Header() {
                         Sport Club
                     </span>
                 </Link>
+
                 <div className="relative flex-1 max-w-md mx-2 sm:mx-6">
                     <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
                     <Input
+                        type="text"
+                        value={search}
+                        onChange={(e) => setSearchWrapper(e.target.value)}
                         placeholder="Search your product..."
                         className="w-full h-11 pl-10 pr-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-slate-400 focus:ring-2 focus:ring-slate-900/10 transition-all"
                     />
                 </div>
+
                 <div className="flex items-center gap-3 shrink-0">
                     <Link href="/basket" className="flex items-center">
                         <BasketHome />

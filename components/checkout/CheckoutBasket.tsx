@@ -1,11 +1,11 @@
 "use client"
 
-import { useProductItems } from "@/context/ProductContext";
+import { useProductContext } from "@/context/ProductContext";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
 export default function CheckoutBasket() {
-    const { productsDTO } = useProductItems();
+    const { productsDTO } = useProductContext();
 
     const subtotal = productsDTO.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const shipping = subtotal > 100 || subtotal === 0 ? 0 : 15;

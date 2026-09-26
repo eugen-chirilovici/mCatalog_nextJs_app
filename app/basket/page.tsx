@@ -1,12 +1,12 @@
 "use client"
 
-import { useProductItems } from "@/context/ProductContext";
+import { useProductContext } from "@/context/ProductContext";
 import BasketItems from "@/components/basket/BasketItems";
 import BasketEmpty from "@/components/basket/BasketEmpty";
 import CheckoutBasket from "@/components/checkout/CheckoutBasket";
 
 export default function Basket() {
-    const { productsDTO } = useProductItems();
+    const { productsDTO } = useProductContext();
 
     if (productsDTO.length === 0) {
         return <BasketEmpty />;

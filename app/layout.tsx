@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ProductContextProvider } from "@/context/ProductContext";
+import { SeachContextProvider } from "@/context/SearchContext";
 import { Toaster } from "@/components/ui/toast";
 import ApiProvider from "@/components/api/ApiProvider";
 
@@ -30,11 +31,13 @@ export default function RootLayout({ children, modal }: LayoutProps<"/">) {
     >
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
         <ProductContextProvider>
-          <Header />
-          <ApiProvider>
-            <main className="flex-grow flex flex-col">{children}</main>
-            {modal}
-          </ApiProvider>
+          <SeachContextProvider>
+            <Header />
+            <ApiProvider>
+              <main className="flex-grow flex flex-col">{children}</main>
+              {modal}
+            </ApiProvider>
+          </SeachContextProvider>
           <Footer />
           <Toaster />
         </ProductContextProvider>

@@ -3,13 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { Product } from "@/model/Product";
 import Image from "next/image";
-import { useProductItems } from "@/context/ProductContext";
+import { useProductContext } from "@/context/ProductContext";
 import ProductSize from "./ProductSize";
 import { showToast } from "@/lib/utils";
 import { FieldLabel } from "../ui/field";
 
 export default function ProductCardSheet({ product }: { product: Product }) {
-    const { converProductToProductDTO, addToProductItems } = useProductItems();
+    const { converProductToProductDTO, addToProductItems } = useProductContext();
 
     return (
         <div className="w-full max-w-4xl mx-auto">
@@ -29,9 +29,14 @@ export default function ProductCardSheet({ product }: { product: Product }) {
                             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
                                 {product.title}
                             </h2>
-                            <p className="text-2xl font-bold text-slate-900 mt-2">
-                                ${product.price}
-                            </p>
+                            <div className="flex flex-row gap-10 text-2xl font-bold text-slate-900 mt-2">
+                                <p>
+                                    ${product.price}
+                                </p>
+                                <div className="text-yellow-500 font-light">
+                                    ★ {product.rating}
+                                </div>
+                            </div>
                         </div>
                         {/* todo
                          <div className="pt-2">

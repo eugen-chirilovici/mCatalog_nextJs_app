@@ -1,9 +1,9 @@
 export interface ProductDTO {
   uuid: string;
   id: number;
-  name: string;
+  title: string;
   price: number;
-  image: string;
+  thumbnail: string;
   quantity: number;
-  size: string;
+  size?: string;
 }

@@ -68,9 +68,9 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
     return {
       uuid: window.crypto.randomUUID(),
       id: product.id,
-      name: product.name,
+      title: product.title,
       price: product.price,
-      image: product.image,
+      thumbnail: product.thumbnail,
       quantity: 1,
       size: size
     };
@@ -82,17 +82,16 @@ export const ProductContextProvider = ({ children }: { children: React.ReactNode
 
   return (
     <ProductContext.Provider
-      value={{ productsDTO, addToProductItems, removeFromBasket, clearProductItems, updateQuantity, converProductToProductDTO, updateSelectedSize }}
-    >
+      value={{ productsDTO, addToProductItems, removeFromBasket, clearProductItems, updateQuantity, converProductToProductDTO, updateSelectedSize }}>
       {children}
     </ProductContext.Provider>
   );
 };
 
-export const useProductItems = () => {
+export const useProductContext = () => {
   const context = useContext(ProductContext);
   if (!context) {
-    throw new Error("useProductItems must be used within a ProductContextProvider");
+    throw new Error("useProductContext must be used within a ProductContextProvider");
   }
   return context;
 };

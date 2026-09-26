@@ -1,10 +1,10 @@
 "use client"
 
-import { useProductItems } from "@/context/ProductContext";
+import { useProductContext } from "@/context/ProductContext";
 import { ShoppingCart } from "lucide-react";
 
 export default function BasketHome() {
-    const { productsDTO } = useProductItems();
+    const { productsDTO } = useProductContext();
     const itemCount = productsDTO.reduce((sum, item) => sum + item.quantity, 0);
 
     return (
